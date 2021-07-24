@@ -1,4 +1,5 @@
-import { NgModule } from '@angular/core';
+import { NgModule, APP_INITIALIZER } from '@angular/core';
+import { KeycloakAngularModule, KeycloakService } from 'keycloak-angular';
 import { BrowserModule } from '@angular/platform-browser';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { AppRoutingModule } from './app-routing.module';
@@ -12,6 +13,24 @@ import { FilmesListComponent } from './views/home/filmes-list/filmes-list.compon
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatCardModule} from '@angular/material/card';
 import {MatMenuModule} from '@angular/material/menu';
+
+
+function initializeKeycloak(keycloak: KeycloakService) {
+  return () =>
+    keycloak.init({
+      config: {
+        url: 'https://lemur-4.cloud-iam.com/auth',
+        realm: 'jnc-cinemas',
+        clientId: 'jnc-cinemas-front',
+      },
+      initOptions: {
+        onLoad: 'check-sso',
+        silentCheckSsoRedirectUri:
+          window.location.origin + '/assets/silent-check-sso.html',
+      },
+    });
+}
+
 
 @NgModule({
   declarations: [
@@ -29,9 +48,16 @@ import {MatMenuModule} from '@angular/material/menu';
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
-    MatTabsModule
+    MatTabsModule,
+    KeycloakAngularModule
   ],
-  providers: [],
+  providers: [{
+    provide: APP_INITIALIZER,
+    useFactory: initializeKeycloak,
+    multi: true,
+    deps: [KeycloakService],
+  }],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
