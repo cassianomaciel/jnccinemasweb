@@ -1,4 +1,4 @@
-<mat-toolbar>
+<mat-toolbar class="background-toolbar">
   <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
     <mat-icon>menu</mat-icon>
   </button>
@@ -20,11 +20,20 @@
     <mat-icon>share</mat-icon>
   </button>
 </mat-toolbar>
+<br />
+<div class="div-principal">
+  <mat-card class="card-principal">
+    <mat-card-header>
+      <div mat-card-avatar class="card-principal-header-image"></div>
+      <mat-card-title>Bem Vindo ao JNC Cinemas</mat-card-title>
+      <mat-card-subtitle>O Melhor do cinema de Porto Alegre</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+    </mat-card-content>
+  </mat-card>
+</div>
 
-
-
-
-<div style="margin-top: 5%;">
+<div class="div-principal" style="margin-top: 5%;">
   <mat-tab-group>
     <mat-tab label="Cinemas">
       <app-cinema-list></app-cinema-list>
