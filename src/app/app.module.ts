@@ -13,6 +13,8 @@ import { FilmesListComponent } from './views/home/filmes-list/filmes-list.compon
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatCardModule} from '@angular/material/card';
 import {MatMenuModule} from '@angular/material/menu';
+import { SessoesListComponent } from './views/home/sessoes-list/sessoes-list.component';
+import { SalasListComponent } from './views/home/salas-list/salas-list.component';
 
 
 function initializeKeycloak(keycloak: KeycloakService) {
@@ -37,7 +39,9 @@ function initializeKeycloak(keycloak: KeycloakService) {
     AppComponent,
     HomeComponent,
     CinemaListComponent,
-    FilmesListComponent
+    FilmesListComponent,
+    SessoesListComponent,
+    SalasListComponent
   ],
   imports: [
     MatMenuModule,
