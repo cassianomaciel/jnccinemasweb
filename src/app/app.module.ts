@@ -16,6 +16,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import { SessoesListComponent } from './views/home/sessoes-list/sessoes-list.component';
 import { SalasListComponent } from './views/home/salas-list/salas-list.component';
 
+
 function initializeKeycloak(keycloak: KeycloakService) {
   return () =>
     keycloak.init({
