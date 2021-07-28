@@ -8,11 +8,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './views/home/home.component';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
-import { CinemaListComponent } from './views/home/cinema-list/cinema-list.component';
-import { FilmesListComponent } from './views/home/filmes-list/filmes-list.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatCardModule} from '@angular/material/card';
 import {MatMenuModule} from '@angular/material/menu';
+import { FilmeFormComponent } from './views/filme-form/filme-form.component';
+import { CinemaFormComponent } from './views/cinema-form/cinema-form.component';
+import { SessaoFormComponent } from './views/sessao-form/sessao-form.component';
+import { SalaFormComponent } from './views/sala-form/sala-form.component';
+import { FilmeListComponent } from './views/filme-list/filme-list.component';
+
 
 
 function initializeKeycloak(keycloak: KeycloakService) {
@@ -36,8 +40,11 @@ function initializeKeycloak(keycloak: KeycloakService) {
   declarations: [
     AppComponent,
     HomeComponent,
-    CinemaListComponent,
-    FilmesListComponent
+    FilmeFormComponent,
+    CinemaFormComponent,
+    SessaoFormComponent,
+    SalaFormComponent,
+    FilmeListComponent,
   ],
   imports: [
     MatMenuModule,
