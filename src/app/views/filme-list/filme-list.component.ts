@@ -12,17 +12,16 @@ export class FilmeListComponent implements OnInit {
   filmeSearch: Filme[];
 
   constructor(
-    filmeSearch: Filme[],
     public filmeService : FilmeService
   ) { }
 
   ngOnInit(): void {
+    this.getFilmes();
   }
 
   getFilmes(){
     this.filmeService.getMoviesWithFilter('nome','teste').subscribe(data=>{
-      this.filmeSearch = data.content;
-
+      this.filmeSearch = data;
     });
   }
 

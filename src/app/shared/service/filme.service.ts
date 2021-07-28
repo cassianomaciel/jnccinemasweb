@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ResponsePageable } from '../model/ResponsePageable.model';
+import { Filme } from '../model/Filme.model';
 
 @Injectable({
   providedIn: 'root'
@@ -19,8 +19,8 @@ export class FilmeService {
     private httpClient: HttpClient
   ) { }
 
-  public getMoviesWithFilter(filterOption: string, filterValue: string): Observable<ResponsePageable> {
-    return this.httpClient.get<ResponsePageable>(this.apiUrl + '?value' + filterValue + 'filterOption' + filterOption);
+  public getMoviesWithFilter(filterOption: string, filterValue: string): Observable<Filme[]> {
+    return this.httpClient.get<Filme[]>(this.apiUrl + '?value' + filterValue + 'filterOption' + filterOption);
   }
 
 }
