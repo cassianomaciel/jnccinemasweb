@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CinemaListComponent } from './views/home/cinema-list/cinema-list.component';
 import { HomeComponent } from './views/home/home.component';
 
 const routes: Routes = [
@@ -8,6 +7,7 @@ const routes: Routes = [
     path:'',
     component: HomeComponent
   }
+
 ];
 
 @NgModule({
