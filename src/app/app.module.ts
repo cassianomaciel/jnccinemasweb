@@ -16,6 +16,7 @@ import { CinemaFormComponent } from './views/cinema-form/cinema-form.component';
 import { SessaoFormComponent } from './views/sessao-form/sessao-form.component';
 import { SalaFormComponent } from './views/sala-form/sala-form.component';
 import { FilmeListComponent } from './views/filme-list/filme-list.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -56,6 +57,7 @@ function initializeKeycloak(keycloak: KeycloakService) {
     MatIconModule,
     MatButtonModule,
     MatTabsModule,
+    HttpClientModule,
     KeycloakAngularModule
   ],
   providers: [{

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Filme } from 'src/app/shared/model/Filme.model';
+import { FilmeService } from 'src/app/shared/service/filme.service';
 
 @Component({
   selector: 'app-filme-list',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FilmeListComponent implements OnInit {
 
-  constructor() { }
+  filmeSearch: Filme[];
+
+  constructor(
+    filmeSearch: Filme[],
+    public filmeService : FilmeService
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  getFilmes(){
+    this.filmeService.getMoviesWithFilter('nome','teste').subscribe(data=>{
+      this.filmeSearch = data.content;
+
+    });
   }
 
 }

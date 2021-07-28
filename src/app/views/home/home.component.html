@@ -1,15 +1,47 @@
-<button mat-button>Home <mat-icon>home</mat-icon> </button>
-<button mat-button [matMenuTriggerFor]="menu">Adicionar</button>
-<mat-menu #menu="matMenu">
-  <button mat-menu-item>Cinema <mat-icon>add</mat-icon> </button>
-  <button mat-menu-item>Salas <mat-icon>add</mat-icon> </button>
-  <button mat-menu-item>Sessões <mat-icon>add</mat-icon> </button>
-  <button mat-menu-item>Filmes <mat-icon>add</mat-icon> </button>
-</mat-menu>
+<mat-toolbar class="background-toolbar">
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <button mat-button>
+    <mat-icon>home</mat-icon>
+  </button>
+  <span class="example-spacer"></span>
+  <button mat-button [matMenuTriggerFor]="menu">Adicionar</button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item>Cinema <mat-icon>add</mat-icon> </button>
+    <button mat-menu-item>Salas <mat-icon>add</mat-icon> </button>
+    <button mat-menu-item>Sessões <mat-icon>add</mat-icon> </button>
+    <button mat-menu-item>Filmes <mat-icon>add</mat-icon> </button>
+  </mat-menu>
+  <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+    <mat-icon>favorite</mat-icon>
+  </button>
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+    <mat-icon>share</mat-icon>
+  </button>
+</mat-toolbar>
+<br />
+<div class="div-principal">
+  <mat-card class="card-principal">
+    <mat-card-header>
+      <div mat-card-avatar class="card-principal-header-image"></div>
+      <mat-card-title>Bem Vindo ao JNC Cinemas</mat-card-title>
+      <mat-card-subtitle>O Melhor do cinema de Porto Alegre</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+    </mat-card-content>
+  </mat-card>
+</div>
 
-<div style="margin-top: 5%;">
+<div class="div-principal" style="margin-top: 5%;">
   <mat-tab-group>
-    <mat-tab label="Cinemas">  </mat-tab>
-    <mat-tab label="Filmes"> <app-filme-list></app-filme-list>> </mat-tab>
+    <mat-tab label="Cinemas">
+      
+    </mat-tab>
+    <mat-tab label="Filmes">
+      
+    </mat-tab>
+    <mat-tab label="Sessões"></mat-tab>
+    <mat-tab label="Salas"></mat-tab>
   </mat-tab-group>
 </div>
