@@ -11,6 +11,8 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatCardModule} from '@angular/material/card';
 import {MatMenuModule} from '@angular/material/menu';
+import {MatInput, MatInputModule} from '@angular/material/input';
+import { FormsModule } from '@angular/forms';
 import { FilmeFormComponent } from './views/filme-form/filme-form.component';
 import { CinemaFormComponent } from './views/cinema-form/cinema-form.component';
 import { SessaoFormComponent } from './views/sessao-form/sessao-form.component';
@@ -55,6 +57,8 @@ function initializeKeycloak(keycloak: KeycloakService) {
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
+    FormsModule,
+    MatInputModule,
     MatTabsModule,
     KeycloakAngularModule
   ],
