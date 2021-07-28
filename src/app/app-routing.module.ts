@@ -7,9 +7,6 @@ const routes: Routes = [
   {
     path:'',
     component: HomeComponent
-  },
-  {
-    path: '**', component: Error404Component
   }
 ];
 
