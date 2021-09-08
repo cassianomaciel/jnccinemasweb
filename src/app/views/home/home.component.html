@@ -10,7 +10,7 @@
   <mat-menu #menu="matMenu">
     <button mat-menu-item>Cinema <mat-icon>add</mat-icon> </button>
     <button mat-menu-item>Salas <mat-icon>add</mat-icon> </button>
-    <button mat-menu-item>Sessões <mat-icon>add</mat-icon> </button>
+    <button mat-menu-item routerLink="/sessao" >Sessões <mat-icon>add</mat-icon> </button>
     <button mat-menu-item>Filmes <mat-icon>add</mat-icon> </button>
   </mat-menu>
   <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
@@ -42,6 +42,7 @@
       
     </mat-tab>
     <mat-tab label="Sessões"></mat-tab>
+    
     <mat-tab label="Salas"></mat-tab>
   </mat-tab-group>
 </div>

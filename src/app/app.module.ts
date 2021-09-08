@@ -1,23 +1,25 @@
 import { NgModule, APP_INITIALIZER } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { KeycloakAngularModule, KeycloakService } from 'keycloak-angular';
 import { BrowserModule } from '@angular/platform-browser';
-import {MatToolbarModule} from '@angular/material/toolbar';
+import { MatToolbarModule} from '@angular/material/toolbar';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './views/home/home.component';
-import {MatIconModule} from '@angular/material/icon';
-import {MatButtonModule} from '@angular/material/button';
-import {MatTabsModule} from '@angular/material/tabs';
-import {MatCardModule} from '@angular/material/card';
-import {MatMenuModule} from '@angular/material/menu';
-import {MatInput, MatInputModule} from '@angular/material/input';
+import { MatIconModule} from '@angular/material/icon';
+import { MatButtonModule} from '@angular/material/button';
+import { MatTabsModule} from '@angular/material/tabs';
+import { MatCardModule} from '@angular/material/card';
+import { MatMenuModule} from '@angular/material/menu';
+import { MatInput, MatInputModule} from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { FilmeFormComponent } from './views/filme-form/filme-form.component';
 import { CinemaFormComponent } from './views/cinema-form/cinema-form.component';
 import { SessaoFormComponent } from './views/sessao-form/sessao-form.component';
 import { SalaFormComponent } from './views/sala-form/sala-form.component';
 import { FilmeListComponent } from './views/filme-list/filme-list.component';
+import { HttpClient } from '@angular/common/http';
 
 
 
@@ -60,7 +62,8 @@ function initializeKeycloak(keycloak: KeycloakService) {
     FormsModule,
     MatInputModule,
     MatTabsModule,
-    KeycloakAngularModule
+    KeycloakAngularModule,
+    HttpClient
   ],
   providers: [{
     provide: APP_INITIALIZER,
